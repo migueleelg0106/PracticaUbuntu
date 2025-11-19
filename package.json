@@ -1,0 +1,22 @@
+{
+  "name": "sso-mini",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start:idp": "npm run start --prefix idp",
+    "start:client": "npm run start --prefix client",
+    "start": "concurrently -n idp,client -c yellow,cyan \"npm run start:idp\" \"npm run start:client\"",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0",
+    "supertest": "^7.1.4"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "jose": "^6.1.0"
+  }
+}
